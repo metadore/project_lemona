@@ -1,0 +1,568 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Lemona by Arcos — Sunlit Sparkling Lemon Vanilla Soda</title>
+<!-- Tailwind CSS CDN with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Plus Jakarta Sans & Playfair Display for Editorial/Botanical Luxury -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            lemon: {
+              50: '#FEFCE8',
+              100: '#FEF9C3',
+              200: '#FEF08A',
+              300: '#FDE047',
+              400: '#FACC15',
+              500: '#EAB308',
+            },
+            aqua: {
+              50: '#F0F9FF',
+              100: '#E0F2FE',
+              300: '#7DD3FC',
+              400: '#38BDF8',
+              500: '#0EA5E9',
+              600: '#0284C7',
+              900: '#0C4A6E',
+            },
+            vanilla: {
+              50: '#FFFDF7',
+              100: '#FFFBEB',
+              200: '#FEF3C7',
+              300: '#FDE68A',
+            },
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+            script: ['"Caveat"', 'cursive'],
+          },
+          boxShadow: {
+            'glow-lemon': '0 12px 36px -8px rgba(250, 204, 21, 0.45)',
+            'glow-aqua': '0 12px 36px -8px rgba(56, 189, 248, 0.35)',
+            'soft-card': '0 10px 30px -5px rgba(12, 74, 110, 0.08)',
+          },
+          animation: {
+            'float-slow': 'floating 5s ease-in-out infinite',
+            'pulse-ring': 'pulsingRing 3s cubic-bezier(0.24, 0, 0.38, 1) infinite',
+            'shimmer': 'shimmer 2.5s linear infinite',
+          },
+          keyframes: {
+            floating: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '50%': { transform: 'translateY(-8px) rotate(0.8deg)' },
+            },
+            pulsingRing: {
+              '0%': { transform: 'scale(0.92)', opacity: '0.8' },
+              '50%': { transform: 'scale(1.06)', opacity: '0.4' },
+              '100%': { transform: 'scale(0.92)', opacity: '0.8' },
+            },
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom Styles: General & Utilities -->
+<style data-purpose="base-styling">
+    body {
+      -webkit-tap-highlight-color: transparent;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .text-balance {
+      text-wrap: balance;
+    }
+    /* Hide scrollbars for crisp native app experience */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<!-- Custom Styles: Micro Radiance and Water Wave Backdrop -->
+<style data-purpose="ambient-decor">
+    .bg-mesh-lemona {
+      background: radial-gradient(circle at 15% 10%, #FEF08A 0%, rgba(254, 240, 138, 0) 50%),
+                  radial-gradient(circle at 85% 30%, #BAE6FD 0%, rgba(186, 230, 253, 0) 45%),
+                  radial-gradient(circle at 50% 80%, #FEF9C3 0%, rgba(254, 249, 195, 0) 60%),
+                  #FFFDF7;
+    }
+    .glass-pill {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+  </style>
+</head>
+<body class="bg-mesh-lemona text-slate-800 antialiased selection:bg-lemon-300 selection:text-slate-900 pb-28">
+<!-- BEGIN: StickyTopNavigation -->
+<header class="sticky top-0 z-50 px-4 pt-3 pb-2 transition-all duration-300 backdrop-blur-md bg-white/75 border-b border-amber-100/60" data-purpose="main-navigation">
+<div class="max-w-md mx-auto flex items-center justify-between">
+<!-- Logo Branding -->
+<a aria-label="Lemona by Arcos Home" class="flex flex-col group" href="#">
+<span class="font-script text-2xl leading-none text-amber-500 font-bold tracking-tight drop-shadow-sm group-hover:text-amber-600 transition-colors">
+          lemona
+        </span>
+<span class="text-[9px] font-bold tracking-widest uppercase text-aqua-600 ml-0.5">
+          by arcos
+        </span>
+</a>
+<!-- Quick Section Anchor Links (Mobile Compact) -->
+<nav aria-label="Page navigation" class="flex items-center space-x-3 text-xs font-semibold text-slate-600">
+<a class="hover:text-amber-600 active:text-amber-700 transition" href="#flavor-profile">Notes</a>
+<a class="hover:text-amber-600 active:text-amber-700 transition" href="#nutrition">Facts</a>
+<a class="hover:text-amber-600 active:text-amber-700 transition" href="#craft-story">Craft</a>
+</nav>
+<!-- Taste The Sun Header CTA Button -->
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-amber-400 to-lemon-400 text-slate-900 shadow-sm shadow-amber-300 active:scale-95 transition transform" href="#pack-selector">
+<span class="">Taste the Sun</span>
+<svg class="w-3.5 h-3.5 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</a>
+</div>
+</header>
+<!-- END: StickyTopNavigation -->
+<!-- BEGIN: HeroSection -->
+<section class="relative pt-6 pb-10 px-4 overflow-hidden" data-purpose="hero-section">
+<!-- Ambient Ripple Background Circles -->
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full bg-lemon-200/40 blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-48 right-0 w-64 h-64 rounded-full bg-aqua-200/35 blur-2xl pointer-events-none -z-10"></div>
+<div class="max-w-md mx-auto flex flex-col items-center text-center">
+<!-- Trust Social Proof Badge -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/90 border border-amber-200 shadow-sm text-xs font-semibold text-slate-700 mb-4 animate-bounce">
+<span class="flex text-amber-400 text-xs">★★★★★</span>
+<span class="text-slate-800 font-bold">45,000+</span> Cans Popped &amp; Loved
+      </div>
+<!-- Main Headline -->
+<h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-3">
+        Sparkling Lemon with a <br>
+<span class="font-serif italic font-normal text-amber-600 bg-gradient-to-r from-amber-600 via-amber-500 to-yellow-500 bg-clip-text text-transparent">
+          Whisper of Vanilla.
+        </span>
+</h1>
+<!-- Supporting Descriptive Subtitle -->
+<p class="text-slate-600 text-sm sm:text-base leading-relaxed max-w-sm mb-6 text-balance">
+        The botanical craft soda infused with cold-pressed Sicilian Eureka lemons and organic Madagascar orchid extract. Effervescent, smooth, and unforgettable.
+      </p>
+<!-- HERO CAN PRESENTATION CARD -->
+<div class="relative w-full max-w-[310px] my-3 group" data-purpose="hero-can-display">
+<!-- Concentric Splash Halo Animation -->
+<div class="absolute inset-0 rounded-[2.5rem] bg-gradient-to-b from-lemon-300/40 to-aqua-300/30 blur-xl animate-pulse-ring -z-10"></div>
+<!-- Featured Can Card -->
+<div class="relative rounded-3xl p-3 bg-gradient-to-b from-white/90 via-white/70 to-aqua-50/80 backdrop-blur-md border border-white shadow-2xl shadow-amber-200/50 flex flex-col items-center">
+<!-- Image Container with Floating Canvas Effect -->
+<div class="relative w-full overflow-hidden rounded-2xl shadow-inner bg-gradient-to-tr from-sky-100 via-amber-50 to-sky-200">
+<img alt="Lemona sparkling lemon soda can with fresh sliced lemons, vanilla orchid, and splashing water droplets" class="w-full h-auto object-cover rounded-2xl animate-float-slow select-none transform hover:scale-105 transition duration-500" loading="eager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoc-4FLYFtseHfof_SOd-ur6uTF17UJOiYQw6eVc72RjophCikPhk61EgBFeXOiFCt5qB9Z4YKOdWbECIU6sMAwvb-EoyuHTpn14vMPkdEhop5yVlTuXKgG7uMRj173Fx3E2AojZEIPw-0U4qZfszg2dZi1_RthS6jt7Nl82XYS858czBC-J9dyhFgNQIUj3PEMQzwuPxrWB99lPkqp74124Ahb8q1_j7MYjYaRqOEu--fLRPf866qIarBgYUiYOlAXg">
+<!-- Top Left Floating Badge -->
+<div class="absolute top-3 left-3 glass-pill px-2.5 py-1 rounded-full text-[11px] font-bold text-slate-800 shadow-md flex items-center gap-1.5 border border-white/80">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              100% Real Citrus
+            </div>
+<!-- Bottom Right Splash Badge -->
+<div class="absolute bottom-3 right-3 glass-pill px-2.5 py-1 rounded-full text-[11px] font-bold text-amber-900 shadow-md flex items-center gap-1 border border-white/80">
+<span class="">✨</span>
+              Zero Artificials
+            </div>
+</div>
+<!-- Quick Taste Attribute Ribbon -->
+<div class="w-full grid grid-cols-3 gap-2 mt-3 text-center">
+<div class="bg-white/80 rounded-xl py-2 px-1 border border-amber-100 shadow-xs">
+<div class="text-[10px] uppercase font-bold text-slate-400">Sweetness</div>
+<div class="text-xs font-bold text-slate-800">Agave Nectar</div>
+</div>
+<div class="bg-white/80 rounded-xl py-2 px-1 border border-amber-100 shadow-xs">
+<div class="text-[10px] uppercase font-bold text-slate-400">Calories</div>
+<div class="text-xs font-bold text-amber-600">35 Cals</div>
+</div>
+<div class="bg-white/80 rounded-xl py-2 px-1 border border-amber-100 shadow-xs">
+<div class="text-[10px] uppercase font-bold text-slate-400">Texture</div>
+<div class="text-xs font-bold text-aqua-600">Champagne Fizz</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="w-full max-w-xs mt-6 flex flex-col gap-3">
+<a class="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-400 text-slate-950 font-bold text-base shadow-glow-lemon hover:brightness-105 active:scale-98 transition flex items-center justify-center gap-2" href="#pack-selector">
+<span class="">Order 12-Pack Sample ($32)</span>
+<svg class="w-5 h-5 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</a>
+<a class="w-full py-3 px-5 rounded-2xl bg-white/90 border border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-50 active:scale-98 transition flex items-center justify-center gap-2 shadow-xs" href="#store-locator">
+<svg class="w-4 h-4 text-aqua-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="">Find in Stores Nearby</span>
+</a>
+</div>
+<!-- Micro Trust Pill -->
+<p class="mt-3 text-xs text-slate-500 flex items-center gap-1.5">
+<svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+        Free carbon-neutral shipping on 12+ packs
+      </p>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: SensoryFlavorProfile -->
+<section class="py-12 px-4 max-w-md mx-auto" data-purpose="sensory-flavor-cards" id="flavor-profile"><div class="flex items-end justify-between mb-6 px-1"><div class="text-left"><span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-100 px-3 py-1 rounded-full">Tasting Notes &amp; Botanicals</span><h2 class="text-2xl font-extrabold text-slate-900 mt-2">A Symphony for Your Palate</h2><p class="text-xs text-slate-600 mt-1 max-w-xs">Swipe horizontally or use arrows to discover the layered botanicals behind every sip.</p></div><div class="flex items-center gap-2"><button aria-label="Previous note" class="w-9 h-9 rounded-full bg-white border border-amber-200/80 shadow-xs flex items-center justify-center text-slate-700 hover:bg-amber-50 active:scale-95 transition" onclick="document.getElementById('flavor-carousel').scrollBy({left: -270, behavior: 'smooth'})"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg></button><button aria-label="Next note" class="w-9 h-9 rounded-full bg-white border border-amber-200/80 shadow-xs flex items-center justify-center text-slate-700 hover:bg-amber-50 active:scale-95 transition" onclick="document.getElementById('flavor-carousel').scrollBy({left: 270, behavior: 'smooth'})"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg></button></div></div><div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar snap-x snap-mandatory scroll-smooth -mx-4 px-4" id="flavor-carousel"><article class="min-w-[270px] max-w-[270px] snap-center p-5 rounded-3xl bg-white border border-amber-200 shadow-soft-card flex flex-col justify-between shrink-0 relative overflow-hidden"><div class="absolute -top-6 -right-6 w-24 h-24 bg-lemon-200/40 rounded-full blur-xl pointer-events-none"></div><div><div class="flex items-center justify-between mb-3"><div class="w-11 h-11 rounded-2xl bg-lemon-100 text-amber-600 flex items-center justify-center text-2xl shadow-inner">🍋</div><span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-lemon-200 text-amber-900">Top Note</span></div><h3 class="font-bold text-slate-900 text-base leading-tight">Sicilian Eureka Lemon</h3><span class="inline-block text-[10px] font-semibold text-amber-700 bg-amber-50 px-2 py-0.5 rounded mt-1 mb-2">92% Fresh Citrus Press</span><p class="text-xs text-slate-600 leading-relaxed">100% cold-pressed Sicilian Eureka lemons delivering vibrant sunshine and mouthwatering zest with natural citric brightness.</p></div><div class="mt-4 pt-3 border-t border-amber-100 flex items-center justify-between text-[11px]"><span class="text-slate-500 font-medium">Acidity Level</span><div class="flex items-center gap-1 font-bold text-amber-600"><span class="">9 / 10</span><span class="text-xs">⚡</span></div></div></article><article class="min-w-[270px] max-w-[270px] snap-center p-5 rounded-3xl bg-white border border-amber-200 shadow-soft-card flex flex-col justify-between shrink-0 relative overflow-hidden"><div class="absolute -top-6 -right-6 w-24 h-24 bg-amber-200/30 rounded-full blur-xl pointer-events-none"></div><div><div class="flex items-center justify-between mb-3"><div class="w-11 h-11 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center text-2xl shadow-inner">🌸</div><span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800">Heart Note</span></div><h3 class="font-bold text-slate-900 text-base leading-tight">Madagascar Orchid Vanilla</h3><span class="inline-block text-[10px] font-semibold text-amber-800 bg-amber-50 px-2 py-0.5 rounded mt-1 mb-2">Organic Orchid Extract</span><p class="text-xs text-slate-600 leading-relaxed">Wild-harvested vanilla orchid essence softens sharp citrus acidity into a velvety, creamy custard finish.</p></div><div class="mt-4 pt-3 border-t border-amber-100 flex items-center justify-between text-[11px]"><span class="text-slate-500 font-medium">Creaminess</span><div class="flex items-center gap-1 font-bold text-amber-700"><span class="">8 / 10</span><span class="text-xs">✨</span></div></div></article><article class="min-w-[270px] max-w-[270px] snap-center p-5 rounded-3xl bg-white border border-amber-200 shadow-soft-card flex flex-col justify-between shrink-0 relative overflow-hidden"><div class="absolute -top-6 -right-6 w-24 h-24 bg-emerald-100/50 rounded-full blur-xl pointer-events-none"></div><div><div class="flex items-center justify-between mb-3"><div class="w-11 h-11 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-2xl shadow-inner">🪴</div><span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Subtle Sweetness</span></div><h3 class="font-bold text-slate-900 text-base leading-tight">Blue Agave Nectar</h3><span class="inline-block text-[10px] font-semibold text-emerald-800 bg-emerald-100/70 px-2 py-0.5 rounded mt-1 mb-2">6g Organic Agave</span><p class="text-xs text-slate-600 leading-relaxed">Slow-roasted Jalisco blue agave nectar for gentle, low-glycemic roundness without refined sugar crash.</p></div><div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]"><span class="text-slate-500 font-medium">Sweetness</span><div class="flex items-center gap-1 font-bold text-emerald-600"><span class="">4 / 10</span><span class="text-xs">🍯</span></div></div></article><article class="min-w-[270px] max-w-[270px] snap-center p-5 rounded-3xl bg-white border border-sky-100 shadow-soft-card flex flex-col justify-between shrink-0 relative overflow-hidden"><div class="absolute -top-6 -right-6 w-24 h-24 bg-aqua-200/30 rounded-full blur-xl pointer-events-none"></div><div><div class="flex items-center justify-between mb-3"><div class="w-11 h-11 rounded-2xl bg-aqua-100 text-aqua-600 flex items-center justify-center text-2xl shadow-inner">🫧</div><span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-aqua-100 text-aqua-800">Effervescence</span></div><h3 class="font-bold text-slate-900 text-base leading-tight">Artesian Micro-Bubbles</h3><span class="inline-block text-[10px] font-semibold text-aqua-800 bg-aqua-50 px-2 py-0.5 rounded mt-1 mb-2">Pinpoint Carbonation</span><p class="text-xs text-slate-600 leading-relaxed">Fine champagne-pinpoint carbonation filtered through ancient limestone for clean, featherlight sparkle.</p></div><div class="mt-4 pt-3 border-t border-sky-100 flex items-center justify-between text-[11px]"><span class="text-slate-500 font-medium">Sparkle Fizz</span><div class="flex items-center gap-1 font-bold text-aqua-600"><span class="">10 / 10</span><span class="text-xs">🥂</span></div></div></article><article class="min-w-[270px] max-w-[270px] snap-center p-5 rounded-3xl bg-white border border-amber-200 shadow-soft-card flex flex-col justify-between shrink-0 relative overflow-hidden"><div class="absolute -top-6 -right-6 w-24 h-24 bg-yellow-200/40 rounded-full blur-xl pointer-events-none"></div><div><div class="flex items-center justify-between mb-3"><div class="w-11 h-11 rounded-2xl bg-lemon-200/60 text-amber-700 flex items-center justify-center text-2xl shadow-inner">🌿</div><span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-lemon-200 text-amber-900">Finish Note</span></div><h3 class="font-bold text-slate-900 text-base leading-tight">Sunlit Bergamot Twist</h3><span class="inline-block text-[10px] font-semibold text-amber-800 bg-amber-50 px-2 py-0.5 rounded mt-1 mb-2">Cold-Distilled Zest</span><p class="text-xs text-slate-600 leading-relaxed">A delicate hint of sun-ripened Mediterranean bergamot peel leaving a crisp, aromatic floral linger on the palate.</p></div><div class="mt-4 pt-3 border-t border-amber-100 flex items-center justify-between text-[11px]"><span class="text-slate-500 font-medium">Aroma Linger</span><div class="flex items-center gap-1 font-bold text-amber-600"><span class="">7 / 10</span><span class="text-xs">🌼</span></div></div></article></div><div class="flex justify-center items-center gap-1.5 mt-2"><span class="w-5 h-1.5 rounded-full bg-amber-500 transition-all"></span><span class="w-1.5 h-1.5 rounded-full bg-amber-200 transition-all"></span><span class="w-1.5 h-1.5 rounded-full bg-amber-200 transition-all"></span><span class="w-1.5 h-1.5 rounded-full bg-amber-200 transition-all"></span><span class="w-1.5 h-1.5 rounded-full bg-amber-200 transition-all"></span></div></section>
+<!-- END: SensoryFlavorProfile -->
+<!-- BEGIN: BotanicalStorySection -->
+<section class="py-12 px-4 bg-gradient-to-b from-amber-50/60 to-white/90 border-y border-amber-100/80" data-purpose="brand-heritage" id="craft-story">
+<div class="max-w-md mx-auto">
+<div class="text-center mb-6">
+<span class="font-script text-2xl text-amber-600">The Arcos Standard</span>
+<h2 class="text-2xl font-bold text-slate-900 mt-1 font-serif">
+          Retro Soda, Reborn Pure
+        </h2>
+<p class="text-xs text-slate-600 mt-2 leading-relaxed">
+          We fell in love with vintage coastal soda counters but hated the high-fructose syrups and artificial yellow dyes. Arcos engineered a modern tribute using organic botanicals.
+        </p>
+</div>
+<!-- Ingredient Trio Badges -->
+<div class="grid grid-cols-3 gap-3 text-center my-6">
+<div class="p-3 bg-white rounded-2xl border border-amber-200/70 shadow-xs flex flex-col items-center">
+<span class="text-2xl mb-1">🍋</span>
+<span class="text-xs font-bold text-slate-800">Sicilian Groves</span>
+<span class="text-[10px] text-slate-500 mt-0.5 leading-tight">Sun-ripened volcanic soil</span>
+</div>
+<div class="p-3 bg-white rounded-2xl border border-amber-200/70 shadow-xs flex flex-col items-center">
+<span class="text-2xl mb-1">🌿</span>
+<span class="text-xs font-bold text-slate-800">Fair-Trade Orchid</span>
+<span class="text-[10px] text-slate-500 mt-0.5 leading-tight">Hand-pollinated vanilla</span>
+</div>
+<div class="p-3 bg-white rounded-2xl border border-amber-200/70 shadow-xs flex flex-col items-center">
+<span class="text-2xl mb-1">💧</span>
+<span class="text-xs font-bold text-slate-800">Artesian Water</span>
+<span class="text-[10px] text-slate-500 mt-0.5 leading-tight">Natural alpine filtration</span>
+</div>
+</div>
+<!-- Quote Card -->
+<blockquote class="bg-amber-100/50 p-4 rounded-2xl border-l-4 border-amber-500 text-xs italic text-slate-700">
+        “Lemona reminds us of sipping ice-cold Italian granita on an August afternoon, softened by a warm breeze of Madagascar vanilla.”
+        <footer class="mt-2 not-italic font-bold text-[11px] text-slate-900">— Lucas Arcos, Master Blender</footer>
+</blockquote>
+</div>
+</section>
+<!-- END: BotanicalStorySection -->
+<!-- BEGIN: NutritionFactsSection -->
+<section class="py-12 px-4 max-w-md mx-auto" data-purpose="clean-nutrition-table" id="nutrition">
+<div class="text-center mb-6">
+<span class="text-xs font-bold uppercase tracking-wider text-aqua-600 bg-aqua-100 px-3 py-1 rounded-full">
+        Radical Transparency
+      </span>
+<h2 class="text-2xl font-extrabold text-slate-900 mt-2">
+        What’s Inside Every Can
+      </h2>
+<p class="text-xs text-slate-500 mt-1">Guilt-free hydration with zero compromises</p>
+</div>
+<!-- Nutritional Breakdown Container -->
+<div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-soft-card">
+<!-- Key Stat Counters -->
+<div class="grid grid-cols-2 gap-4 pb-6 border-b border-slate-100 text-center">
+<div class="p-3 bg-amber-50/70 rounded-2xl">
+<span class="text-3xl font-extrabold text-amber-600">35</span>
+<span class="block text-xs font-bold text-slate-700 uppercase tracking-wide mt-1">Calories</span>
+</div>
+<div class="p-3 bg-sky-50/70 rounded-2xl">
+<span class="text-3xl font-extrabold text-aqua-600">6g</span>
+<span class="block text-xs font-bold text-slate-700 uppercase tracking-wide mt-1">Pure Agave</span>
+</div>
+</div>
+<!-- Detail Rows -->
+<div class="divide-y divide-slate-100 text-xs mt-3">
+<div class="py-2.5 flex justify-between items-center">
+<span class="text-slate-600 font-medium">Serving Size</span>
+<span class="font-bold text-slate-900">1 Can (12 fl oz / 355ml)</span>
+</div>
+<div class="py-2.5 flex justify-between items-center">
+<span class="text-slate-600 font-medium">Total Sugars</span>
+<span class="font-bold text-slate-900">6g (Organic Agave)</span>
+</div>
+<div class="py-2.5 flex justify-between items-center">
+<span class="text-slate-600 font-medium">Added Cane Sugar</span>
+<span class="font-bold text-emerald-600">0g (None)</span>
+</div>
+<div class="py-2.5 flex justify-between items-center">
+<span class="text-slate-600 font-medium">Vitamin C (Real Citrus)</span>
+<span class="font-bold text-amber-600">100% Daily Value</span>
+</div>
+<div class="py-2.5 flex justify-between items-center">
+<span class="text-slate-600 font-medium">Sodium</span>
+<span class="font-bold text-slate-900">5mg</span>
+</div>
+</div>
+<!-- Certifications Chips -->
+<div class="mt-5 pt-4 border-t border-slate-100 flex flex-wrap gap-2 justify-center">
+<span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700">🌱 Certified Vegan</span>
+<span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700">🌾 Gluten-Free</span>
+<span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700">🚫 Non-GMO</span>
+<span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700">⚡ Low Glycemic</span>
+</div>
+</div>
+</section>
+<!-- END: NutritionFactsSection -->
+<!-- BEGIN: PressAndReviewsSection -->
+<section class="py-10 px-4 max-w-md mx-auto" data-purpose="social-proof">
+<div class="text-center mb-6">
+<h2 class="text-xl font-bold text-slate-900">Loved by Bartenders &amp; Critics</h2>
+<p class="text-xs text-slate-500">As featured in modern lifestyle publications</p>
+</div>
+<!-- Press Badges -->
+<div class="grid grid-cols-3 gap-2 text-center text-slate-400 font-serif italic text-xs mb-6">
+<div class="bg-white/80 p-2.5 rounded-xl border border-slate-100">“Effervescent Perfection”<br><span class="not-italic font-sans text-[10px] font-bold text-slate-700 uppercase">Bon Appétit</span></div>
+<div class="bg-white/80 p-2.5 rounded-xl border border-slate-100">“The Soda of the Summer”<br><span class="not-italic font-sans text-[10px] font-bold text-slate-700 uppercase">Vogue Living</span></div>
+<div class="bg-white/80 p-2.5 rounded-xl border border-slate-100">“Pure Citrus Alchemy”<br><span class="not-italic font-sans text-[10px] font-bold text-slate-700 uppercase">Daily Refresh</span></div>
+</div>
+<!-- Customer Card Carousel/List -->
+<div class="space-y-3">
+<div class="bg-white p-4 rounded-2xl border border-amber-100 shadow-xs">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex text-amber-400 text-xs">★★★★★</div>
+<span class="text-[10px] text-slate-400 font-semibold">Verified Buyer • Austin, TX</span>
+</div>
+<p class="text-xs text-slate-700 italic">
+          “I gave up artificial sodas two years ago and missed them so much. Lemona hits that craveable sweet-and-sour bliss without the crash. My fridge is never without it.”
+        </p>
+<span class="block text-xs font-bold text-slate-900 mt-2">— Maya C.</span>
+</div>
+<div class="bg-white p-4 rounded-2xl border border-amber-100 shadow-xs">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex text-amber-400 text-xs">★★★★★</div>
+<span class="text-[10px] text-slate-400 font-semibold">Verified Buyer • Malibu, CA</span>
+</div>
+<p class="text-xs text-slate-700 italic">
+          “The vanilla hint is genius. It tones down that harsh lemon bite into a creamy confection. Spectacular over crushed ice with fresh mint!”
+        </p>
+<span class="block text-xs font-bold text-slate-900 mt-2">— Julian V.</span>
+</div>
+</div>
+</section>
+<!-- END: PressAndReviewsSection -->
+<!-- BEGIN: InteractivePackSelector -->
+<section class="py-12 px-4 max-w-md mx-auto" data-purpose="bundle-purchase-options" id="pack-selector">
+<div class="text-center mb-6">
+<span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-3 py-1 rounded-full">
+        Direct from Orchard
+      </span>
+<h2 class="text-2xl font-black text-slate-900 mt-2">
+        Select Your Fresh Stash
+      </h2>
+<p class="text-xs text-slate-600 mt-1">Free refrigerated priority shipping on 12-pack &amp; 24-pack orders</p>
+</div>
+<form class="space-y-3" id="cart-form" onsubmit="event.preventDefault();">
+<!-- Option 1: 4-Pack Taster -->
+<label class="pack-option relative block p-4 rounded-2xl bg-white border-2 border-slate-200 cursor-pointer transition hover:border-amber-300">
+<input class="sr-only" name="pack_selection" onchange="updateStickyBar('4-Pack Taster', '$14.00')" type="radio" value="4-pack">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center radio-dot">
+<div class="w-2.5 h-2.5 rounded-full bg-amber-500 hidden"></div>
+</div>
+<div>
+<div class="font-bold text-sm text-slate-900">4-Pack Taster</div>
+<div class="text-[11px] text-slate-500">Perfect weekend trial pack</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-extrabold text-slate-900 text-sm">$14.00</span>
+<span class="block text-[10px] text-slate-400">$3.50/can</span>
+</div>
+</div>
+</label>
+<!-- Option 2: 12-Pack (MOST POPULAR) -->
+<label class="pack-option selected-pack relative block p-4 rounded-2xl bg-amber-50/60 border-2 border-amber-500 cursor-pointer shadow-sm">
+<input checked="" class="sr-only" name="pack_selection" onchange="updateStickyBar('12-Pack Standard', '$32.00')" type="radio" value="12-pack">
+<!-- Popular Badge -->
+<span class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-amber-500 text-[10px] font-extrabold tracking-wide uppercase text-white shadow-xs">
+          ★ Most Popular
+        </span>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded-full border-2 border-amber-500 flex items-center justify-center radio-dot">
+<div class="w-2.5 h-2.5 rounded-full bg-amber-500"></div>
+</div>
+<div>
+<div class="font-bold text-sm text-slate-900 flex items-center gap-1.5">
+                12-Pack Box
+                <span class="text-[10px] px-1.5 py-0.2 rounded bg-amber-200 text-amber-900 font-semibold">Save 24%</span>
+</div>
+<div class="text-[11px] text-slate-500">Free 2-day delivery included</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-extrabold text-amber-700 text-base">$32.00</span>
+<span class="block text-[10px] text-slate-400 line-through">$42.00</span>
+</div>
+</div>
+</label>
+<!-- Option 3: 24-Pack Fridge Master -->
+<label class="pack-option relative block p-4 rounded-2xl bg-white border-2 border-slate-200 cursor-pointer transition hover:border-amber-300">
+<input class="sr-only" name="pack_selection" onchange="updateStickyBar('24-Pack Party Fridge', '$58.00')" type="radio" value="24-pack">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center radio-dot">
+<div class="w-2.5 h-2.5 rounded-full bg-amber-500 hidden"></div>
+</div>
+<div>
+<div class="font-bold text-sm text-slate-900 flex items-center gap-1">
+                24-Pack Fridge Stash
+                <span class="text-[10px] px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 font-semibold">Best Value</span>
+</div>
+<div class="text-[11px] text-slate-500">Stock the pantry &amp; never run out</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-extrabold text-slate-900 text-sm">$58.00</span>
+<span class="block text-[10px] text-slate-400">$2.41/can</span>
+</div>
+</div>
+</label>
+</form>
+<!-- Satisfaction Guarantee Note -->
+<div class="mt-4 flex items-center justify-center gap-2 text-center text-xs text-slate-500">
+<svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+<span class="">100% "Love the Fizz" Taste Guarantee or Money Back</span>
+</div>
+</section>
+<!-- END: InteractivePackSelector -->
+<!-- BEGIN: NewsletterAndFooter -->
+<footer class="pt-10 pb-20 px-4 bg-slate-900 text-slate-300 rounded-t-3xl border-t border-slate-800" data-purpose="site-footer">
+<div class="max-w-md mx-auto">
+<!-- 15% VIP Signup Box -->
+<div class="bg-slate-800/80 p-5 rounded-2xl border border-slate-700/80 text-center mb-8">
+<span class="text-xs font-bold text-lemon-400 uppercase tracking-widest">Join the Citrus Club</span>
+<h3 class="text-lg font-bold text-white mt-1">Get 15% Off Your First Order</h3>
+<p class="text-xs text-slate-400 mt-1 mb-4">Plus secret botanical drop alerts and limited seasonal recipes.</p>
+<form class="flex gap-2" onsubmit="event.preventDefault(); alert('Welcome to the Lemona Club! Check your inbox for your 15% discount code.');">
+<input class="flex-1 text-xs px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-lemon-400" placeholder="Enter your email" required="" type="email">
+<button class="px-4 py-2.5 rounded-xl bg-amber-400 text-slate-950 font-bold text-xs hover:bg-lemon-300 active:scale-95 transition" type="submit">
+            Unlock 15%
+          </button>
+</form>
+</div>
+<!-- Brand Micro Bio -->
+<div class="flex flex-col items-center text-center space-y-3">
+<div class="font-script text-3xl text-lemon-300">lemona</div>
+<p class="text-xs text-slate-400 max-w-xs leading-relaxed">
+          Artisanal botanical soda handcrafted with Sicilian sun and organic sweet orchids. Designed &amp; bottled by Arcos Refreshments Co.
+        </p>
+<!-- Social Links -->
+<div class="flex space-x-6 text-sm font-semibold text-slate-300 pt-2">
+<a class="hover:text-lemon-300 transition" href="#">Instagram</a>
+<a class="hover:text-lemon-300 transition" href="#">TikTok</a>
+<a class="hover:text-lemon-300 transition" href="#">Stockists</a>
+<a class="hover:text-lemon-300 transition" href="#">Press Kit</a>
+</div>
+<div class="pt-6 border-t border-slate-800 w-full text-center">
+<p class="text-[11px] text-slate-500">
+            © 2024 Arcos Refreshments LLC. All rights reserved. Lemona is a registered trademark.
+          </p>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: NewsletterAndFooter -->
+<!-- BEGIN: StickyFloatingBuyBar -->
+<aside class="fixed bottom-0 left-0 right-0 z-50 p-3 bg-white/95 backdrop-blur-lg border-t border-amber-200 shadow-2xl" data-purpose="floating-checkout-trigger">
+<div class="max-w-md mx-auto flex items-center justify-between gap-3">
+<!-- Selected Pack Info Preview -->
+<div class="flex flex-col pl-1">
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-400" id="sticky-item-label">Selected Bundle</span>
+<div class="flex items-baseline gap-1.5">
+<span class="text-base font-black text-slate-900" id="sticky-price-display">$32.00</span>
+<span class="text-[11px] text-emerald-600 font-bold">Free Ship</span>
+</div>
+</div>
+<!-- Direct Add-to-Cart Trigger -->
+<button class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-lemon-400 text-slate-950 font-bold text-sm shadow-glow-lemon active:scale-95 transition duration-150 flex items-center justify-center gap-2" id="add-to-cart-btn" onclick="handleAddToCart()">
+<svg class="w-4 h-4 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+</svg>
+<span id="btn-label-text" class="">Add 12-Pack to Cart</span>
+</button>
+</div>
+</aside>
+<!-- END: StickyFloatingBuyBar -->
+<!-- JavaScript: UI Interactivity for Bundle Switching and Purchase feedback -->
+<script data-purpose="cart-interaction">
+    // Update sticky bottom purchase bar details according to user choice
+    function updateStickyBar(packageName, price) {
+      const priceDisplay = document.getElementById('sticky-price-display');
+      const btnLabel = document.getElementById('btn-label-text');
+      
+      if (priceDisplay && btnLabel) {
+        priceDisplay.textContent = price;
+        btnLabel.textContent = `Add ${packageName.split(' ')[0]} to Cart`;
+      }
+
+      // Visual styling for selected cards
+      const options = document.querySelectorAll('.pack-option');
+      options.forEach(option => {
+        const input = option.querySelector('input');
+        const dot = option.querySelector('.radio-dot div');
+        const outerCircle = option.querySelector('.radio-dot');
+        
+        if (input.checked) {
+          option.classList.add('bg-amber-50/60', 'border-amber-500');
+          option.classList.remove('border-slate-200');
+          dot.classList.remove('hidden');
+          outerCircle.classList.add('border-amber-500');
+          outerCircle.classList.remove('border-slate-300');
+        } else {
+          option.classList.remove('bg-amber-50/60', 'border-amber-500');
+          option.classList.add('border-slate-200');
+          dot.classList.add('hidden');
+          outerCircle.classList.remove('border-amber-500');
+          outerCircle.classList.add('border-slate-300');
+        }
+      });
+    }
+
+    // Interactive button animation feedback on cart tap
+    function handleAddToCart() {
+      const btn = document.getElementById('add-to-cart-btn');
+      const originalText = btn.innerHTML;
+      
+      btn.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-slate-950" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <span>Refreshing your cart...</span>
+      `;
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.innerHTML = `
+          <svg class="w-4 h-4 text-emerald-950" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          </svg>
+          <span class="text-slate-950 font-extrabold">Added to Cart!</span>
+        `;
+        
+        // Reset state after 2 seconds
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+        }, 2200);
+      }, 700);
+    }
+  </script>
+
+
+</body></html>
