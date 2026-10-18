@@ -148,11 +148,11 @@ The lemons aren't going to click themselves.
 
 ## 🛠️ The Creative Recipe
 
-| Ingredient           | What it brought to the party                 |
-| -------------------- | -------------------------------------------- |
+| Ingredient           | What it brought to the party                  |
+| -------------------- | --------------------------------------------  |
 | 📌 Pinterest         | Visual inspiration and aesthetic exploration |
 | 🎨 Canva             | Product design and brand visuals             |
-| ✨ Google Stitch      | AI-assisted website design                   |
+| ✨ Google Stitch      | AI-assisted website design                  |
 | 💻 HTML              | Bringing the website to life                 |
 | 🚀 Netlify           | Getting Lemona onto the internet             |
 | 🧠 Human imagination | The original questionable decision           |
@@ -170,7 +170,9 @@ project_lemona/
 │
 ├── index.html    # The digital lemonade stand
 ├── lemona.png    # The star of the show 🍋
-└── README.md     # You are literally reading it
+└── screen.png    # The preview
+└── readme.md     # You are reading it!
+
 ```
 
 Simple ingredients. One refreshing result.
